@@ -60,6 +60,7 @@ CREATE TABLE members(
     phone VARCHAR(20),
     home_address VARCHAR(100),
     is_registered BOOLEAN,
+    registration_date TIMESTAMP,
 
     FOREIGN KEY(flock_id)
         REFERENCES flocks(flock_id),

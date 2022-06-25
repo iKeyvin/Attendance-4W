@@ -1,5 +1,6 @@
 # Files
 *.dtemp
+*.dtmp
 *.bkp
 *.drawio
 
