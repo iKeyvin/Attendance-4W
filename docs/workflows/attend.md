@@ -29,8 +29,11 @@ sequenceDiagram
     member ->> sensor: show QR code
 
     activate sensor
+    activate sensor
 
     sensor ->> sensor: read QR code
+    
+    deactivate sensor
 
     sensor ->> backend: POST /attendance
     backend -->> sensor: statusCode
