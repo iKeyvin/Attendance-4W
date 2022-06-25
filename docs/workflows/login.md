@@ -1,10 +1,9 @@
-::: mermaid
+```mermaid
 sequenceDiagram
     participant member as Member
     participant app as App
     participant backend as Backend
-
-
+    
     alt local_auth
         member ->> app: login(local)
 
@@ -27,4 +26,4 @@ sequenceDiagram
 
     deactivate member
     deactivate app
-:::
+```

@@ -1,11 +1,10 @@
-::: mermaid
+```mermaid
 sequenceDiagram
     participant member as Member
     participant app as App
     participant backend as Backend
     participant admin as Admin
     
-
     alt local_auth
         member ->> app: register(local)
         activate member
@@ -25,8 +24,6 @@ sequenceDiagram
     deactivate member
     deactivate app
 
-
-   
     alt admin.locale == new_member.locale
         alt req accepted
             admin ->> backend: PATCH /members/:memberId
@@ -61,4 +58,4 @@ sequenceDiagram
             deactivate backend
         end
     end
-:::
+```

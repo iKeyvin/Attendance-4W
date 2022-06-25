@@ -1,10 +1,9 @@
-::: mermaid
+```mermaid
 sequenceDiagram
     participant member as Member
     participant phone as Phone
     participant backend as Backend
     participant sensor as QR Sensor
-
 
     opt if not logged in
         member ->> phone: login(auth)
@@ -27,13 +26,11 @@ sequenceDiagram
 
     deactivate phone
 
-
     member ->> sensor: show QR code
 
     activate sensor
 
     sensor ->> sensor: read QR code
-
 
     sensor ->> backend: POST /attendance
     backend -->> sensor: statusCode
@@ -44,4 +41,4 @@ sequenceDiagram
 
     deactivate sensor
     deactivate member
-:::
+```
