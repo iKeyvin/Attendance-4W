@@ -1,0 +1,7 @@
+# Files
+*.dtemp
+*.bkp
+*.drawio
+
+# Folders
+att_refs
