@@ -7,14 +7,16 @@ sequenceDiagram
 
     opt if not logged in
         member ->> phone: login(auth)
+
         activate member
+        deactivate member
         activate phone
 
         phone ->> backend: POST /login
+
         activate backend
 
         backend -->> phone: statusCode
-        deactivate member
     end
 
     phone ->> backend: GET /qr-code
@@ -22,8 +24,8 @@ sequenceDiagram
     backend -->> phone: qrCode
 
     phone ->> member: showQR()
+    
     activate member
-
     deactivate phone
 
     member ->> sensor: show QR code

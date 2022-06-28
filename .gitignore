@@ -6,3 +6,5 @@
 
 # Folders
 att_refs
+node_modules
+dist
