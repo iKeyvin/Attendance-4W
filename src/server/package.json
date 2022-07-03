@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "test": "node --test"
+    "test": "node --no-warnings --test"
   },
   "author": "Richard Correa",
   "license": "ISC",

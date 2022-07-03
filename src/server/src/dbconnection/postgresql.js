@@ -1,16 +1,24 @@
 import { Sequelize } from 'sequelize';
+import config  from '../config/config.js';
 
-const user = 'admin'
-const host = 'localhost'
-const database = 'attendance_db'
-const password = 'admin'
-const port = '5432'
+const database = config.db.database;
+const host = config.db.host;
+const port = config.db.port;
+const user = config.db.user;
+const password = config.db.password;
 
 const connection = new Sequelize(database, user, password, {
     host,
     port,
-    dialect: 'postgres',
-    logging: false
+    dialect: config.db.type,
+    logging: false,
+
+    dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false
+        }
+    }
 });
 
 export default connection;
