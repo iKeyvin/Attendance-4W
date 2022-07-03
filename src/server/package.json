@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node .",
+    "dev": "nodemon .",
     "test": "node --test"
   },
   "author": "Richard Correa",

@@ -56,11 +56,11 @@ Member.init(
         registration_date : {
             type: DataTypes.DATE,
             allowNull : false
-        },
+        }
     },
     {
         sequelize:connection,
-        modelName:'member',
+        modelName:'members',
         timestamps:false
     }
 );
