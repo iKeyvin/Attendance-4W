@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "test": "node --no-warnings --test"
+    "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest"
   },
   "author": "Richard Correa",
   "license": "ISC",
@@ -19,7 +19,9 @@
     "sequelize": "^6.21.2"
   },
   "devDependencies": {
+    "jest": "^28.1.2",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "supertest": "^6.2.4"
   }
 }

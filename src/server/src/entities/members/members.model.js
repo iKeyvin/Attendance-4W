@@ -7,7 +7,8 @@ Member.init(
     {
         member_id : {
             type: DataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         flock_id : {
             type: DataTypes.INTEGER,
@@ -19,7 +20,8 @@ Member.init(
         },
         username : {
             type: DataTypes.STRING,
-            allowNull : false
+            allowNull : false,
+            unique: true
         },
         passwd : {
             type: DataTypes.STRING,
