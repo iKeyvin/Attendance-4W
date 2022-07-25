@@ -8,6 +8,7 @@ const admin = {
     positions_id: 1,
     username: "richard",
     passwd: "test",
+    salt:"salt",
     privilege_level: 4,
     first_name: "Richard",
     surname: "Correa",
@@ -24,6 +25,7 @@ const new_member_1 = {
     username: "test_1",
     privilege_level: 0,
     passwd: "test",
+    salt:"salt",
     first_name: "test 1",
     middlename: "test 1",
     surname: "test 1",
@@ -39,6 +41,7 @@ const new_member_2 = {
     privilege_level: 0,
     username: "test_2",
     passwd: "test",
+    salt:"salt",
     first_name: "test 2",
     surname: "test 2",
     is_registered: false,
@@ -51,6 +54,7 @@ const new_member_2_updated = {
     privilege_level: 0,
     username: "test_2",
     passwd: "test",
+    salt:"salt",
     first_name: "test 2 updated",
     surname: "test 2 updated",
     is_registered: false,
@@ -101,7 +105,9 @@ describe('GET /members', () => {
 
         expect(response.body.length).toBeLessThanOrEqual(limit);
     });
+});
 
+describe('GET /members/:username', () => {
     test('should get single user', async () => {
         let response = await request(app).get('/members/test_1').send();
 
@@ -115,7 +121,7 @@ describe('GET /members', () => {
     });
 });
 
-describe('PATCH /members', () => {
+describe('PATCH /members/:username', () => {
     test('should update', async () => {
         await request(app).patch('/members/test_2').send(new_member_2_updated);
         let member = await request(app).get('/members/test_2').send();
@@ -133,24 +139,16 @@ describe('PATCH /members', () => {
     });
 });
 
-describe('DELETE /members', () => {
-    const request_1 = {
-        username: "test_1"
-    }
-
-    const request_2 = {
-        username: "test_2"
-    }
-
+describe('DELETE /members/:username', () => {
     test('should delete user by username', async () => {
-        let response = await request(app).delete('/members').send(request_1);
+        let response = await request(app).delete('/members/test_1').send();
 
         expect(response.statusCode).toBe(204);
     });
 
     test('should fail if not exists', async () => {
-        await request(app).delete('/members').send(request_2);
-        let response = await request(app).delete('/members').send(request_2);
+        await request(app).delete('/members/test_2').send();
+        let response = await request(app).delete('/members/test_2').send();
 
         expect(response.statusCode).toBe(404);
     });

@@ -7,12 +7,14 @@ Areas.init(
     {
         area_id : {
             type: DataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
 
         area_name : {
             type: DataTypes.STRING,
-            allowNull : false
+            allowNull : false,
+            unique: true
         }
     },
     {

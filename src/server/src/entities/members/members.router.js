@@ -7,7 +7,7 @@ membersRouter.route('/')
     .get(async (req, res, next) => {
         try {
             const filters = {
-                limit: req.query.limit ? req.query.limit : 10,
+                limit: req.query.limit || 10,
                 offset: ((req.query.page - 1) * 10),
                 subQuery: false
             };
@@ -17,6 +17,7 @@ membersRouter.route('/')
             res.status(200).json(results);
         }
         catch (error) {
+            console.error(error);
             res.sendStatus(400);
         }
     })
@@ -27,6 +28,7 @@ membersRouter.route('/')
             res.sendStatus(201);
         }
         catch (error) {
+            console.error(error);
             res.sendStatus(400);
         }
     })
@@ -40,6 +42,7 @@ membersRouter.route('/')
             res.sendStatus(status);   
         }
         catch (error) {
+            console.error(error);
             res.sendStatus(500);
         }
     });
@@ -59,6 +62,7 @@ membersRouter.route('/:username')
             res.status(status).json(result);
         }
         catch (error) {
+            console.error(error);
             res.sendStatus(500);
         }
     })
@@ -72,9 +76,10 @@ membersRouter.route('/:username')
             
             let status = count > 0 ? 200 : 404;
 
-            res.status(status).json({rows_affected : count[0]});;
+            res.status(status).json({rows_affected : count[0]});
         }
         catch (error) {
+            console.error(error);
             res.sendStatus(500);
         }
     })
@@ -82,7 +87,7 @@ membersRouter.route('/:username')
         try {
             const count = await Member.destroy({
                 where: {
-                    username: req.body.username
+                    username: req.params.username
                 }
             });
 
@@ -90,6 +95,7 @@ membersRouter.route('/:username')
             res.sendStatus(status);   
         }
         catch (error) {
+            console.error(error);
             res.sendStatus(500);
         }
     });

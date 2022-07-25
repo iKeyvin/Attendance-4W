@@ -27,6 +27,10 @@ Member.init(
             type: DataTypes.STRING,
             allowNull : false
         },
+        salt : {
+            type: DataTypes.STRING,
+            allowNull : false
+        },
         privilege_level : {
             type: DataTypes.INTEGER,
             allowNull : false

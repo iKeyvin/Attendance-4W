@@ -1,27 +1,33 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "Attendance server",
-  "main": "src/index.js",
-  "type": "module",
-  "scripts": {
-    "start": "node .",
-    "dev": "nodemon .",
-    "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest"
-  },
-  "author": "Richard Correa",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.2"
-  },
-  "devDependencies": {
-    "jest": "^28.1.2",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.18",
-    "supertest": "^6.2.4"
-  }
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Attendance server",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node .",
+        "dev": "nodemon .",
+        "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest",
+        "majestic": "set NODE_OPTIONS=--experimental-vm-modules && npx majestic"
+    },
+    "author": "Richard Correa",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "pg": "^8.7.3",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.21.2"
+    },
+    "devDependencies": {
+        "jest": "^28.1.2",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.18",
+        "supertest": "^6.2.4"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.(js|jsx)$": "babel-jest"
+        }
+    }
 }

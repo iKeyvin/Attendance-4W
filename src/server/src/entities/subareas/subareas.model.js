@@ -7,7 +7,8 @@ Subareas.init(
     {
         subarea_id : {
             type: DataTypes.INTEGER,
-            primaryKey : true
+            primaryKey : true,
+            autoIncrement : true
         },
         area_id : {
             type: DataTypes.INTEGER,
@@ -15,7 +16,8 @@ Subareas.init(
         },
         subarea_name : {
             type: DataTypes.STRING,
-            allowNull : false
+            allowNull : false,
+            unique:true
         }
     },
     {

@@ -12,7 +12,8 @@ AssignedPositions.init(
 
         position_id : {
             type: DataTypes.INTEGER,
-            allowNull : false
+            allowNull : false,
+            unique: true
         }
     },
     {
