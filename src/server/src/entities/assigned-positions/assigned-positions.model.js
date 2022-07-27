@@ -9,11 +9,13 @@ AssignedPositions.init(
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-
+        member_id : {
+            type: DataTypes.INTEGER,
+            allowNull : false,
+        },
         position_id : {
             type: DataTypes.INTEGER,
             allowNull : false,
-            unique: true
         }
     },
     {
