@@ -14,10 +14,6 @@ Member.init(
             type: DataTypes.INTEGER,
             allowNull : false
         },
-        positions_id : {
-            type: DataTypes.INTEGER,
-            allowNull : false
-        },
         username : {
             type: DataTypes.STRING,
             allowNull : false,
