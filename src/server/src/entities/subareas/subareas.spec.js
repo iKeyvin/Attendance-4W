@@ -10,8 +10,8 @@ const new_subarea_1 = {
 }
 
 const new_subarea_2 = {
-    subarea_name:"subarea_test",
-    area_id:2
+    subarea_name:"subarea_test_2",
+    area_id:1
 }
 
 const new_subarea_1_updated = {
@@ -21,8 +21,7 @@ const new_subarea_1_updated = {
 
 /* #region Before and after */
 beforeAll(async () => {
-    //await request(app).delete('/subareas/subarea_test').send();
-    //await request(app).post('/subareas').send(new_subarea_0);
+
 });
 
 afterAll(done => {
@@ -38,8 +37,13 @@ describe('POST /subareas', () => {
         expect(response.statusCode).toBe(201);
     });
 
+    test('should accept new subareas in same area', async () => {
+        let response = await request(app).post('/subareas').send(new_subarea_2);
+        expect(response.statusCode).toBe(201);
+    });
+
     test('should not accept duplicates', async () => {
-        let response = await request(app).post('/subareas').send(new_subarea_1);
+        let response = await request(app).post('/subareas').send(new_subarea_2);
         expect(response.statusCode).toBe(400);
     });
 });
@@ -84,6 +88,7 @@ describe('PATCH /subareas/:subarea_name', () => {
 
 describe('DELETE /subareas/:subarea_name', () => {
     test('should delete subarea by name', async () => {
+        await request(app).delete('/subareas/subarea_test_2').send();
         let response = await request(app).delete('/subareas/subarea_test_updated').send();
 
         expect(response.statusCode).toBe(204);

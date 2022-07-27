@@ -7,7 +7,8 @@ Locales.init(
     {
         locale_id : {
             type: DataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         subarea_id : {
             type: DataTypes.INTEGER,

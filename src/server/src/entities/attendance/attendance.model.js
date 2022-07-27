@@ -7,7 +7,8 @@ Attendance.init(
     {
         attendance_id : {
             type: DataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement : true
         },
         member_id : {
             type: DataTypes.INTEGER,

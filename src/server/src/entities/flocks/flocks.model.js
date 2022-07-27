@@ -7,7 +7,8 @@ Flocks.init(
     {
         flock_id : {
             type: DataTypes.INTEGER,
-            primaryKey : true
+            primaryKey : true,
+            autoIncrement: true
         },
         locale_id : {
             type: DataTypes.INTEGER,

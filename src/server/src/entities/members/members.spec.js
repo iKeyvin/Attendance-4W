@@ -21,8 +21,24 @@ const admin = {
 
 const new_member_1 = {
     flock_id: 1,
-    positions_id: 1,
+    positions_id: 2,
     username: "test_1",
+    privilege_level: 0,
+    passwd: "test",
+    salt:"salt",
+    first_name: "test 1",
+    middlename: "test 1",
+    surname: "test 1",
+    phone: "123456789",
+    home_address: "address",
+    is_registered: false,
+    registration_date: "2022-07-02T17:50:00.000Z"
+}
+
+const new_member_invalid_positions_id = {
+    flock_id: 1,
+    positions_id: 2,
+    username: "test_positions_id",
     privilege_level: 0,
     passwd: "test",
     salt:"salt",
@@ -37,7 +53,7 @@ const new_member_1 = {
 
 const new_member_2 = {
     flock_id: 1,
-    positions_id: 1,
+    positions_id: 3,
     privilege_level: 0,
     username: "test_2",
     passwd: "test",
@@ -50,13 +66,26 @@ const new_member_2 = {
 
 const new_member_2_updated = {
     flock_id: 1,
-    positions_id: 1,
+    positions_id: 3,
     privilege_level: 0,
     username: "test_2",
     passwd: "test",
     salt:"salt",
     first_name: "test 2 updated",
     surname: "test 2 updated",
+    is_registered: false,
+    registration_date: "2022-07-02T17:50:00.000Z"
+}
+
+const new_member_3_invalid_privilage = {
+    flock_id: 1,
+    positions_id: 4,
+    privilege_level: 7,
+    username: "test_3",
+    passwd: "test",
+    salt:"salt",
+    first_name: "test 3",
+    surname: "test 2",
     is_registered: false,
     registration_date: "2022-07-02T17:50:00.000Z"
 }
@@ -90,6 +119,17 @@ describe('POST /members', () => {
         let response = await request(app).post('/members').send(new_member_2);
         expect(response.statusCode).toBe(201);
     });
+
+    test('should not accept duplicate positions id', async () => {
+        let response = await request(app).post('/members').send(new_member_invalid_positions_id);
+        expect(response.statusCode).toBe(400);
+    });
+
+    test('should not accept invalid privilage level', async () => {
+        let response = await request(app).post('/members').send(new_member_3_invalid_privilage);
+        expect(response.statusCode).toBe(400);
+    });
+
 });
 
 describe('GET /members', () => {
@@ -141,6 +181,9 @@ describe('PATCH /members/:username', () => {
 
 describe('DELETE /members/:username', () => {
     test('should delete user by username', async () => {
+        await request(app).delete('/members/test_positions_id').send();
+        await request(app).delete('/members/test_3').send();
+
         let response = await request(app).delete('/members/test_1').send();
 
         expect(response.statusCode).toBe(204);
