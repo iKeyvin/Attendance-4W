@@ -5,9 +5,10 @@ class AssignedPositions extends Model{}
 
 AssignedPositions.init(
     {
-        positions_id : {
+        assigned_position_id : {
             type: DataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         member_id : {
             type: DataTypes.INTEGER,
