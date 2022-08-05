@@ -26,8 +26,6 @@
         "supertest": "^6.2.4"
     },
     "jest": {
-        "transform": {
-            "^.+\\.(js|jsx)$": "babel-jest"
-        }
+        "transform": {}
     }
 }
