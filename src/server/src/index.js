@@ -1,5 +1,5 @@
 import app from './app.js';
-import config from './config/config.json' assert {type: 'json'};
+import config from './config/config.json' assert { type: 'json' };
 
 // Initial config
 const HOST = config.server.host;
