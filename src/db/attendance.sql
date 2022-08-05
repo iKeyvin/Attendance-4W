@@ -132,5 +132,9 @@ INSERT INTO positions (position_name) VALUES('kawan leader');
 
 INSERT INTO members (flock_id, privilege_level, username, passwd, salt, first_name, middlename, surname, phone, home_address, is_registered, registration_date) 
     VALUES(1, 4, 'richard', 'test', 'salt','Richard', 'Mercado', 'Correa', '662461018', 'San Bernardino 13', true, '2022-07-02 19:50:00-00');
+INSERT INTO members (flock_id, privilege_level, username, passwd, salt, first_name, middlename, surname, phone, home_address, is_registered, registration_date) 
+    VALUES(1, 0, 'pedro', 'test', 'salt','Pedro', 'Mercado', 'Correa', '662461018', 'San Bernardino 13', true, '2022-07-02 19:50:00-00');
+INSERT INTO members (flock_id, privilege_level, username, passwd, salt, first_name, middlename, surname, phone, home_address, is_registered, registration_date) 
+    VALUES(2, 0, 'marcos', 'test', 'salt','Marcos', 'Mercado', 'Correa', '662461018', 'San Bernardino 13', true, '2022-07-02 19:50:00-00');
 
 INSERT INTO assigned_positions (member_id, position_id) VALUES(1, 1);
