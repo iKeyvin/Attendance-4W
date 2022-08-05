@@ -19,11 +19,11 @@ Attendance.init(
             allowNull : false
         },
         attendance_date : {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull : false
         },
         attendance_time : {
-            type: DataTypes.STRING,
+            type: DataTypes.TIME,
             allowNull : false
         }
     },

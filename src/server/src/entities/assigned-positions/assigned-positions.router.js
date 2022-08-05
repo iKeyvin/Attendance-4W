@@ -85,5 +85,4 @@ assignedPositionsRouter.route('/:member_id')
         }
     });
 
-
 export default assignedPositionsRouter;
