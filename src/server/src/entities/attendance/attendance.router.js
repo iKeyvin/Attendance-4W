@@ -10,7 +10,7 @@ attendanceRouter.route('/')
                 limit: req.query.limit || 10,
                 offset: ((req.query.page - 1) * 10),
                 subQuery: false,
-                where: JSON.parse(req.query.filter)
+                where: req.query.filter ? JSON.parse(req.query.filter) : ''
             };
 
             const results = await Attendance.findAll(filters);

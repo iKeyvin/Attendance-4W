@@ -39,7 +39,7 @@ afterAll(async done => {
 /* #endregion */
 
 /* #region Tests */
-describe('POST /members', () => {
+describe('POST /attendance', () => {
     test('should insert correctly', async () => {
         let response = await request(app).post('/attendance').send(new_att_0);
         expect(response.statusCode).toBe(201);
@@ -61,7 +61,7 @@ describe('POST /members', () => {
     });
 });
 
-describe('GET /members', () => {
+describe('GET /attendance', () => {
     test('should be OK', async () => {
         let response = await request(app).get('/attendance?page=1').send();
 
