@@ -9,7 +9,8 @@ membersRouter.route('/')
             const filters = {
                 limit: req.query.limit || 10,
                 offset: ((req.query.page - 1) * 10),
-                subQuery: false
+                subQuery: false,
+                where: req.query.filter
             };
 
             const results = await Member.findAll(filters);

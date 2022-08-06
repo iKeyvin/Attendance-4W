@@ -125,6 +125,9 @@ INSERT INTO locales (subarea_id, locale_name, country) VALUES(1, 'Barcelona', 'S
 INSERT INTO flocks (locale_id, flock_name) VALUES(1, 'Judea');
 INSERT INTO flocks (locale_id, flock_name) VALUES(1, 'Patmos');
 
+INSERT INTO events (locale_id, event_name) VALUES (1, 'Worship');
+INSERT INTO events (locale_id, event_name) VALUES (1, 'Bible Study');
+
 INSERT INTO positions (position_name) VALUES('member');
 INSERT INTO positions (position_name) VALUES('officer');
 INSERT INTO positions (position_name) VALUES('pastor');
