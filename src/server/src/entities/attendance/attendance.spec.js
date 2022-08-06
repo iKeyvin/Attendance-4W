@@ -4,24 +4,24 @@ import connection from '../../dbconnection/postgresql.js';
 
 /* #region Sample inputs */
 const new_att_0 = {
-    member_id: 1,
-    event_id:1,
-    attendance_date: "2022-01-17",
-    attendance_time: "04:05:06 CET"
+    "member_id": 1,
+    "event_id":1,
+    "attendance_date": "2022-01-17",
+    "attendance_time": "04:05:06 CET"
 }
 
 const new_att_1 = {
-    member_id: 2,
-    event_id:1,
-    attendance_date: "2022-01-17",
-    attendance_time: "04:05:06 CET"
+    "member_id": 2,
+    "event_id":1,
+    "attendance_date": "2022-01-17",
+    "attendance_time": "04:05:06 CET"
 }
 
 const new_att_2 = {
-    member_id: 1,
-    event_id:1,
-    attendance_date: "2022-02-17",
-    attendance_time: "04:05:06 CET"
+    "member_id": 1,
+    "event_id":1,
+    "attendance_date": "2022-02-17",
+    "attendance_time": "04:05:06 CET"
 }
 
 /* #endregion */
