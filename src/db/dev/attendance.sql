@@ -57,15 +57,15 @@ CREATE TABLE members(
     flock_id INTEGER NOT NULL,
     privilege_level SMALLINT NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
-    passwd VARCHAR(64) NOT NULL,
-    salt VARCHAR(16) NOT NULL,
+    passwd VARCHAR(128) NOT NULL,
+    salt VARCHAR(128) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     middlename VARCHAR(50),
     surname VARCHAR(50) NOT NULL,
     phone VARCHAR(20),
     home_address VARCHAR(100),
     is_registered BOOLEAN NOT NULL,
-    registration_date TIMESTAMP NOT NULL,
+    registration_date TIMESTAMP WITH TIME ZONE NOT NULL,
 
     FOREIGN KEY(flock_id)
         REFERENCES flocks(flock_id),
