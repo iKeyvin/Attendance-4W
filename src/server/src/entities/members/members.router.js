@@ -1,5 +1,6 @@
 import express from 'express';
 import Member from './members.model.js';
+import { hashPassword } from '../../helpers/password-helper.js';
 
 const membersRouter = express.Router();
 
@@ -24,6 +25,10 @@ membersRouter.route('/')
     })
     .post(async (req, res, next) => {
         try {
+            const crypt = hashPassword(req.body.passwd);
+            req.body.passwd = crypt.hash;
+            req.body.salt = crypt.salt;
+
             await Member.create(req.body);
             
             res.sendStatus(201);

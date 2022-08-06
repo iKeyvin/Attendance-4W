@@ -4,18 +4,18 @@ import connection from '../../dbconnection/postgresql.js';
 
 /* #region Sample inputs */
 const admin = {
-    flock_id: 1,
-    username: "richard",
-    passwd: "test",
-    salt:"salt",
-    privilege_level: 4,
-    first_name: "Richard",
-    surname: "Correa",
-    middlename: "Mercado",
-    phone: "662461018",
-    home_address: "San Bernardino 13",
-    is_registered: true,
-    registration_date: "2022-07-02T17:50:00.000Z"
+    "flock_id": 1,
+    "username": "richard",
+    "passwd": "test",
+    "salt":"salt",
+    "privilege_level": 4,
+    "first_name": "Richard",
+    "surname": "Correa",
+    "middlename": "Mercado",
+    "phone": "662461018",
+    "home_address": "San Bernardino 13",
+    "is_registered": true,
+    "registration_date": "2022-07-02T17:50:00.000Z"
 }
 
 const new_member_1 = {
