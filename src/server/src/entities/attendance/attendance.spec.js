@@ -31,10 +31,12 @@ beforeAll(async () => {
     await request(app).delete('/attendance').send();
 });
 
-afterAll(async done => {
-    await request(app).delete('/attendance').send();
-    connection.close();
-    done();
+afterAll(done => {
+    request(app).delete('/attendance').send()
+    .then(_ => {
+        connection.close();
+        done();
+    });
 });
 /* #endregion */
 
