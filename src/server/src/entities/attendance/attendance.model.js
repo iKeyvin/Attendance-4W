@@ -11,7 +11,7 @@ Attendance.init(
             autoIncrement : true
         },
         member_id : {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull : false
         },
         event_id : {

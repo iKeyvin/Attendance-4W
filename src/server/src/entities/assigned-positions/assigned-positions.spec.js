@@ -67,7 +67,7 @@ describe('GET /assigned-positions/:member_id', () => {
     test('should get single user', async () => {
         let response = await request(app).get('/assigned-positions/1').send();
 
-        expect(response.body.member_id).toBe(1);
+        expect(response.body.member_id).toBe('1');
     });
 
     test('should fail if single user does not exist', async () => {

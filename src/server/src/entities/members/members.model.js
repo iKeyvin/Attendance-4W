@@ -6,9 +6,8 @@ class Member extends Model{}
 Member.init(
     {
         member_id : {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true
         },
         flock_id : {
             type: DataTypes.INTEGER,

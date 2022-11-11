@@ -4,6 +4,7 @@ import connection from '../../dbconnection/postgresql.js';
 
 /* #region Sample inputs */
 const admin = {
+    "member_id":"admin",
     "flock_id": 1,
     "username": "richard",
     "passwd": "test",
@@ -19,6 +20,7 @@ const admin = {
 }
 
 const new_member_1 = {
+    member_id :"new_member_1",
     flock_id: 1,
     username: "test_1",
     privilege_level: 0,
@@ -34,6 +36,7 @@ const new_member_1 = {
 }
 
 const new_member_2 = {
+    member_id :"new_member_2",
     flock_id: 1,
     privilege_level: 0,
     username: "test_2",
@@ -46,6 +49,7 @@ const new_member_2 = {
 }
 
 const new_member_2_updated = {
+    member_id :"new_member_2",
     flock_id: 1,
     privilege_level: 0,
     username: "test_2",
@@ -58,6 +62,7 @@ const new_member_2_updated = {
 }
 
 const new_member_3_invalid_privilage = {
+    member_id :"new_member_3",
     flock_id: 1,
     privilege_level: 7,
     username: "test_3",
