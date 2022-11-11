@@ -1,6 +1,7 @@
 import express from 'express';
 import Member from './members.model.js';
 import { hashPassword } from '../../helpers/password-helper.js';
+import passport from '../../helpers/facebook-auth.js';
 
 const membersRouter = express.Router();
 
@@ -51,6 +52,20 @@ membersRouter.route('/')
             console.error(error);
             res.sendStatus(500);
         }
+    });
+
+membersRouter.route('/success')
+    .get((req, res, next) => {
+        res.send('Success!');
+    });
+
+membersRouter.route('/auth')
+    .get(passport.authenticate('facebook', {
+        successRedirect : '/members/success',
+        failureRedirect : '/'
+    }))
+    .post(passport.authenticate('facebook', { scope:'email' }), async (req, res, next) => {
+
     });
 
 membersRouter.route('/:username')

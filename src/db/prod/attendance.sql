@@ -53,7 +53,7 @@ CREATE TABLE positions(
 );
 
 CREATE TABLE members(
-    member_id VARCHAR(20) PRIMARY KEY ,
+    member_id VARCHAR(20) PRIMARY KEY,
     flock_id INTEGER NOT NULL,
     privilege_level SMALLINT NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE members(
     phone VARCHAR(20),
     home_address VARCHAR(100),
     is_registered BOOLEAN NOT NULL,
-    registration_date TIMESTAMP NOT NULL,
+    registration_date TIMESTAMP WITH TIME ZONE NOT NULL,
 
     FOREIGN KEY(flock_id)
         REFERENCES flocks(flock_id),
@@ -111,7 +111,6 @@ CREATE TABLE attendance(
 
     UNIQUE(member_id, event_id, attendance_date)
 );
-
 
 INSERT INTO areas (area_name) VALUES ('Philippi');
 
