@@ -1,14 +1,14 @@
 {
-    "server": {
-        "host": "0.0.0.0",
-        "port": 3000
+    "server" : {
+        "host" : "0.0.0.0",
+        "port" : 3000
     },
-    "db": {
-        "type": "postgres",
-        "host": "ec2-54-246-185-161.eu-west-1.compute.amazonaws.com",
-        "port": 5432,
-        "database": "dd5co23lh53t6t",
-        "user": "yodgnhekxyyiaf",
-        "password": "8ac2949e00102c14bfbd90b00cc27847947ae1f9f7ef77764305d04edb769971"
+    "db" : {
+        "type" : "postgres",
+        "host" : "ec2-54-246-185-161.eu-west-1.compute.amazonaws.com",
+        "port" : 5432,
+        "database" : "dd5co23lh53t6t",
+        "user" : "yodgnhekxyyiaf",
+        "password" : "8ac2949e00102c14bfbd90b00cc27847947ae1f9f7ef77764305d04edb769971"
     }
 }

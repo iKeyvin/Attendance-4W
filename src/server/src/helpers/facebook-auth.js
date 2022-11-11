@@ -1,11 +1,12 @@
 import passport from 'passport';
 import { Strategy as facebookStrategy } from 'passport-facebook';
 import Member from '../entities/members/members.model.js';
+import config from '../config/config.json' assert { type: 'json' };
 
 let facebookConfig = {
     clientID : process.env.FACEBOOK_CLIENT_ID || '1268519197280409',
     clientSecret : process.env.FACEBOOK_CLIENT_SECRET || '2b12ff8329fb7c1fbd87c45dc2629547',
-    callbackURL : `http://localhost:3000/members/auth`,
+    callbackURL : `http://${config.server.host}:${config.server.port}/members/auth`,
     profileFields : ['id', 'displayName', 'picture.type(large)', 'email']
 }
 

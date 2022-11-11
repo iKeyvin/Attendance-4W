@@ -4,7 +4,7 @@ import { createSuperuser } from './helpers/password-helper.js';
 
 // Initial config
 export const HOST = config.server.host;
-export const PORT = process.env.port || config.server.port;
+export const PORT = config.server.port;
 
 app.listen(PORT, HOST, () => {
     createSuperuser(HOST, PORT);
